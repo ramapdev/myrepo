@@ -1,19 +1,19 @@
-To list Files
+#To list Files
 ls -lrt
 
-to filter file from a list of files
+#to filter file from a list of files
 ls -lrt | grep -i "file1"
 
-to get the last changed file
+#to get the last changed file
 ls -1t | head -n 1
 
-to find a file
+#to find a file
 find . -type f -name "file1"
 
-to find files older than 10 days
+#to find files older than 10 days
 find . -type f +mtime -10
 
-to remove files older than 10 days
+#to remove files older than 10 days
 find . -type f +mtime -10 | xargs rm -rf
 
 #find files greater than of size 1GB
@@ -31,16 +31,16 @@ tar -cvzf test.tar.gz file1
 #extract a tar file
 tar -xvzf test.tar.gz
 
-to check any java processess are running
+#to check any java processess are running
 ps -ef | grep java
 
-to check memory usage
+#to check memory usage
 free -h
 
-to check disk space
+#to check disk space
 df -h
 
-to check space used by folder
+#to check space used by folder
 du -sh *
 
 #to list ports that are being used
@@ -93,6 +93,49 @@ sed -ie "s/abc/def/g" file.txt
 
 #to delete a line which contains a string
 sed -ie "/abc/d" file.txt
+
+#to print first column of a file
+awk -F "," '{  print $1,$2 }'  file.txt
+
+#to print last column of a file
+awk -F "," '{  print $NF }'  file.txt
+
+#to print last but one column of a file
+awk -F "," '{  print $(NF-1) }'  file.txt
+
+#basename of a folder
+basename `pwd`
+
+#to fetch first field of csv file
+cut -d , -f 1 file.txt
+
+#to list lines starting with a digit
+grep -E "^[[:digit:]]" file.txt
+
+#to list lines that not start with a digit
+grep -vE "^[[:digit:]]" file.txt
+
+#grep to list files matching a string
+grep -l -i "abc" *.txt
+
+#grep to list line above a matching string
+grep -A1 cfg file.txt | tail -n 1
+grep -B1 cfg file.txt | head -n 1
+
+#copy files and directories
+cp -R dir1 dir2
+
+#rename a folder
+mv dir1 dir2
+
+#create a soft link
+ln -sf source_file symbolic_link
+
+#create a hard link
+ln source_file link_name
+
+#to create a folder and sub folders
+mkdir -p dir1/subdir2/subdir3
 
 
 
