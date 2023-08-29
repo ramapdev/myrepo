@@ -1,0 +1,100 @@
+To list Files
+ls -lrt
+
+to filter file from a list of files
+ls -lrt | grep -i "file1"
+
+to get the last changed file
+ls -1t | head -n 1
+
+to find a file
+find . -type f -name "file1"
+
+to find files older than 10 days
+find . -type f +mtime -10
+
+to remove files older than 10 days
+find . -type f +mtime -10 | xargs rm -rf
+
+#find files greater than of size 1GB
+find . -type f -size +1G 
+
+#find files that start with test
+find . -type f -name "file*"
+
+#search for a string in bzfile
+bzgrep "abc" test.bz2
+
+#tar a file with gz compression
+tar -cvzf test.tar.gz file1
+
+#extract a tar file
+tar -xvzf test.tar.gz
+
+to check any java processess are running
+ps -ef | grep java
+
+to check memory usage
+free -h
+
+to check disk space
+df -h
+
+to check space used by folder
+du -sh *
+
+#to list ports that are being used
+netstat -tnulp
+
+#to check for a connection
+telnet 127.0.0.1 1521
+
+#to dig a ipaddress
+dig 127.0.0.1
+
+#to check ip address of a url
+nslookup example.com
+
+#to check uptime of a linux server
+uptime -a
+
+#to check users logged into a linux machine
+who
+
+#to install a package
+yum -y install docker
+
+#to update a linux system
+yum -y update
+
+#to start a service
+systemctl start docker
+
+#command to create a file
+touch filename
+
+#change permission of the file
+chmod 777 filename
+
+#to change permission of a directory recursively 
+chmod -R 777 dir
+
+#to change password of a user in linux using commandline
+passwd
+
+#to check groups to which a user is added
+cat /etc/group | grep username
+
+#list system information
+uname -a
+
+#to search and replace a string in a file
+sed -ie "s/abc/def/g" file.txt
+
+#to delete a line which contains a string
+sed -ie "/abc/d" file.txt
+
+
+
+
+
