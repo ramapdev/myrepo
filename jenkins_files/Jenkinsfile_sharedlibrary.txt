@@ -1,0 +1,18 @@
+library identifier: 'jenkinslibrary@latest', retriever: legacySCM(libraryPath: 'library/', scm: scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ramapdev/myrepo.git']]))
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                script {
+                echo 'Hello World'
+                bat 'echo "Hello World"'
+               log.info 'Starting'
+               log.info "SHARED LIBRARY"
+                }
+                  
+            }
+        }
+    }
+}
